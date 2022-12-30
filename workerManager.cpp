@@ -102,6 +102,7 @@ void WorkerManager::add_Emp()
         // 更新职工人数
         this->m_EmpNum = newSize;
 
+        this->save();
         // 提示添加成功
         cout << "成功添加" << addNum << " 名新职工";
     }
@@ -109,4 +110,18 @@ void WorkerManager::add_Emp()
     {
         cout << "输入数据有误" << endl;
     }
+}
+
+void WorkerManager::save()
+{
+    ofstream ofs;
+    ofs.open(FILENAME, ios::out);
+
+    for(int i=0; i<this->m_EmpNum; i++)
+    {
+        ofs << this->m_empArray[i]->m_Id << " "
+            << this->m_empArray[i]->m_Name << " "
+            << this->m_empArray[i]->m_DepId << endl;
+    }
+    ofs.close();
 }
