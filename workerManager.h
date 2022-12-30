@@ -42,5 +42,11 @@ public:
     // 保存到文件
     void save();
 
+    // 删除职工
+    void Del_Emp();
+
+    // 判断职工是否存在
+    int IsExist(int id);
+
     ~WorkerManager();
 };
