@@ -240,6 +240,33 @@ void WorkerManager::Show_Emp()
 
 void WorkerManager::Del_Emp()
 {
+    if (this->m_FileIsEmpty)
+    {
+        cout << "文件不存在或记录为空！" << endl;
+    }
+    else
+    {
+        cout << "请输入想要删除职工编号：" << endl;
+        int id = 0;
+        cin >> id;
+
+        int index = this->IsExist(id);
+        if (index != -1)
+        {
+            // 说明职工存在
+            for (int i = index; i < this->m_EmpNum - 1; i++)
+            {
+                this->m_empArray[i] = this->m_empArray[i + 1];
+            }
+            this->m_EmpNum--; // 更新数组中记录人员个数
+            // 同步更新到文件中
+            this->save();
+        }
+        else
+        {
+            cout << "删除失败，未找到该职工" << endl;
+        }
+    }
 }
 
 // 判断职工是否存在
