@@ -9,20 +9,18 @@ using namespace std;
 int main(int argc, char const *argv[])
 {
 
-    Worker * worker = NULL;
-    worker = new Employee(1, "张三", 1);
-    worker->showInfo();
+    // Worker * worker = NULL;
+    // worker = new Employee(1, "张三", 1);
+    // worker->showInfo();
     // delete worker;
 
-    worker = new Manager(2, "李四", 2);
-    worker->showInfo();
+    // worker = new Manager(2, "李四", 2);
+    // worker->showInfo();
     // delete worker;
 
-    worker = new Boss(3, "王五", 3);
-    worker->showInfo();
+    // worker = new Boss(3, "王五", 3);
+    // worker->showInfo();
     // delete worker;
-
-    exit(0);
 
     WorkerManager wm;
 
@@ -40,6 +38,7 @@ int main(int argc, char const *argv[])
             wm.exitSystem();
             break;
         case 1: // 增加职工
+            wm.add_Emp();
             break;
         case 2: // 显示职工
             break;
