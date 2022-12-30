@@ -36,6 +36,9 @@ public:
     // 初始化员工
     void init_Emp();
 
+    // 显示员工
+    void Show_Emp();
+
     // 保存到文件
     void save();
 
