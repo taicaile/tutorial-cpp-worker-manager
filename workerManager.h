@@ -9,7 +9,6 @@ using namespace std;
 
 #define FILENAME "empFile.txt"
 
-
 class WorkerManager
 {
 public:
@@ -23,10 +22,19 @@ public:
     int m_EmpNum;
 
     // 职工数组指针
-    Worker ** m_empArray;
+    Worker **m_empArray;
 
     // 添加职工
     void add_Emp();
+
+    // 判断文件是否为空 标志
+    bool m_FileIsEmpty;
+
+    // 统计文件中的人数
+    int get_EmpNum();
+
+    // 初始化员工
+    void init_Emp();
 
     // 保存到文件
     void save();
